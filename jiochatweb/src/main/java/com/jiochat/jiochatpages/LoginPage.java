@@ -21,7 +21,7 @@ public class LoginPage extends BaseClass {
 	private final By countriesList = By.tagName("li");
 	private final By countryCode = By.xpath("//span[contains(@class,'country-code-number')]");
 	private final By enterNumber = By.id("phoneNumber");
-	private final By acceptNcontinue = By.xpath("//div[contains(@class,'nav-button')]");
+	private final By acceptNcontinue = By.xpath("//button[contains(@class,'accept-button')]");
 	private final By errorPopUp = By.xpath("//div[contains(@class,'content p-ul')]/div");
 	private final By closeErrorPopUp = By.xpath("//*[@id=\"dialog-root\"]/div/div/div[2]/div[2]/div");
 	private final By termCondition = By.xpath("//a[contains(@href,'https://jiochat.com/condition/eula.html')]");
@@ -55,14 +55,14 @@ public class LoginPage extends BaseClass {
 	public void enterWrongPhoneNumber() throws Exception
 	{
 		sendKeyAction(enterNumber, WaitStrategies.VISIBLE, ReadPropertyFile.get(ConfigProperties.WRONGMOBILENUMBER));
-		clickAction(acceptNcontinue, WaitStrategies.NONE);
+		clickAction(acceptNcontinue, WaitStrategies.CLICKABLE);
 	}
 	
 	public OtpPage enterCorrectPhoneNumber() throws Exception
 	{
 		sendKeyAction(enterNumber, WaitStrategies.VISIBLE, ReadPropertyFile.get(ConfigProperties.CORRECTMOBILENUMBER));
 		Thread.sleep(1000);
-		clickAction(acceptNcontinue, WaitStrategies.NONE);
+		clickAction(acceptNcontinue, WaitStrategies.CLICKABLE);
 		return new OtpPage();
 	}
 	

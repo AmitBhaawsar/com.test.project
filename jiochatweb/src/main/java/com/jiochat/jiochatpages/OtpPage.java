@@ -12,7 +12,7 @@ public class OtpPage extends BaseClass {
 	
 	private final By otpNumber = By.id("otpNumber");
 	private final By resendLink = By.xpath("//p[contains(@text, 'Resend OTP')]");
-	private final By verifyOtp = By.xpath("//*[@id=\"app\"]/div[3]/div[2]/div/div/div[2]/div/div[2]/div/div/div/div/div/div[4]/button");
+	private final By verifyOtp = By.xpath("//button[contains(text(),'Verify OTP')]");
 	private final By errorMessage = By.xpath("//p[contains(@class, 'thi error-msg')]");
 	
 	public void enterWrongOtp() throws Exception

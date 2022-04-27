@@ -5,10 +5,12 @@
     <classes>
       <class name="com.jiochat.jiochatbaseclassTest.LoginTest">
         <methods>
-          <include name="loginWithCorrectNumberButCorrectOtp"/>
           <include name="afterTestEnd"/>
+          <include name="verifyLoginWithWrongNumber"/>
           <include name="tearDown"/>
+          <include name="verifyCountryCode"/>
           <include name="setUp"/>
+          <include name="verifyTermNConditionPage"/>
           <include name="beforeTestStart"/>
         </methods>
       </class> <!-- com.jiochat.jiochatbaseclassTest.LoginTest -->

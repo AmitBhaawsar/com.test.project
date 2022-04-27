@@ -15,7 +15,7 @@ import utilitescontainer.Log;
 
 public class LoginTest extends BaseClassTest {
 	
-	@Test(enabled=false)
+	@Test()
 	public void SelectCountryNChangeCountryName() throws Exception
 	{
 		Log.info("Login Page is opened");
@@ -38,14 +38,14 @@ public class LoginTest extends BaseClassTest {
 	
 	
 	
-	@Test(enabled=false)
+	@Test()
 	public void verifyCountryCode()
 	{
 		String countryCode = new LoginPage().getCountryCode();
 		Assert.assertEquals(countryCode, "+91","Country code is matched");
 	}
 	
-	@Test(enabled=false)
+	@Test()
 	public void verifyTermNConditionPage()
 
 	{
@@ -56,7 +56,7 @@ public class LoginTest extends BaseClassTest {
 	}
 	
 	
-	@Test(enabled=false)
+	@Test()
 	public void verifyLoginWithWrongNumber() throws Exception
 	{
 		new LoginPage().enterWrongPhoneNumber();
@@ -66,7 +66,7 @@ public class LoginTest extends BaseClassTest {
 		new LoginPage().clearLoginNumber();
 	}
 	
-	@Test(enabled=false)
+	@Test()
 	public void loginWithCorrectNumberButWrongOtp() throws Exception
 	{
 		new LoginPage().enterCorrectPhoneNumber();
@@ -82,7 +82,8 @@ public class LoginTest extends BaseClassTest {
 		new LoginPage().enterCorrectPhoneNumber();
 		new OtpPage().ClearOtp();
 		new OtpPage().enterCorrectOtp();
-		String message = new OtpPage().clickVerifyOtpButton(true);
+		new OtpPage().clickVerifyOtpButton(true);
+		Thread.sleep(3000);
 		String homePageTitle = new HomePage().verifyHomePageTitle();
 		Assert.assertEquals(homePageTitle, "JIOCHAT");
 	}
